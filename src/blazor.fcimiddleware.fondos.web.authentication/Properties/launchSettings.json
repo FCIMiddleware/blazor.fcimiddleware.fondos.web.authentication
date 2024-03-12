@@ -17,7 +17,7 @@
       "applicationUrl": "http://localhost:5179",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://+:8000"
+        "ASPNETCORE_URLS": "http://+:8085"
       }
     },
     "IIS Express": {
@@ -26,7 +26,7 @@
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://+:8000"
+        "ASPNETCORE_URLS": "http://+:8085"
       }
     }
   }
