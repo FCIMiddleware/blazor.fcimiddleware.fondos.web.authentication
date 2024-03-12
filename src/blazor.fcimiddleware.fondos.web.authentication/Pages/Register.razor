@@ -1,80 +1,78 @@
 ﻿@page "/register"
 
 
-<div class=" hold-transition register-page">
-    <div class="register-box">
-        <div class="register-logo">
-            <a href="#"><b>FCI</b> Middleware</a>
-        </div>
+<div class="register-box">
+    <div class="register-logo">
+        <a href="#"><b>FCI</b> Middleware</a>
+    </div>
 
-        <div class="card">
-            <div class="card-body register-card-body">
-                <p class="login-box-msg">Register a new membership</p>
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">Register a new membership</p>
 
-                <EditForm Model="registerRequestViewModel" OnValidSubmit="OnValidSubmit">
-                    <DataAnnotationsValidator></DataAnnotationsValidator>
-                    <div class="mb-3">
-                        <InputText id="nombre" @bind-Value="registerRequestViewModel.Nombre" class="form-control" placeholder="First Name"></InputText>
-                        <ValidationMessage For="@(()=>registerRequestViewModel.Nombre)"></ValidationMessage>
-                    </div>
-                    <div class="mb-3">
-                        <InputText id="apellido" @bind-Value="registerRequestViewModel.Apellido" class="form-control" placeholder="Surname"></InputText>
-                        <ValidationMessage For="@(()=>registerRequestViewModel.Apellido)"></ValidationMessage>
-                    </div>
-                    <div class="mb-3">
-                        <InputText id="email" type="email" @bind-Value="registerRequestViewModel.Email" class="form-control" placeholder="Email"></InputText>
-                        <ValidationMessage For="@(()=>registerRequestViewModel.Email)"></ValidationMessage>
-                    </div>
-                    <div class="mb-3">
-                        <InputText id="password" type="password" @bind-Value="registerRequestViewModel.Password" class="form-control" placeholder="Password"></InputText>
-                        <ValidationMessage For="@(()=>registerRequestViewModel.Password)"></ValidationMessage>
-                    </div>
-                    <div class="input-group mb-3">
-                        <InputText id="confirmPassword" type="password" @bind-Value="registerRequestViewModel.ConfirmPassword" class="form-control" placeholder="Confirm Password"></InputText>
-                        <ValidationMessage For="@(()=>registerRequestViewModel.ConfirmPassword)"></ValidationMessage>
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <InputCheckbox typeof="checkbox" id="agreeTerms" @bind-Value="ReadTerms" name="terms"></InputCheckbox>
-                                <label for="agreeTerms">
-                                    I agree to the <a href="#">terms</a>
-                                </label>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-dark btn-block">Register</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            @* <ValidationSummary></ValidationSummary> *@
-                            @if (HayErrores)
-                            {
-                                <p class="text-center text-danger">@MensajeErrores</p>
-                            }
-                        </div>
-                    </div>
-                </EditForm>
-
-                <div class="social-auth-links text-center">
-                    <p>- OR -</p>
-                    <NavLink class="btn btn-block btn-dark" href="#">
-                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                    </NavLink>
-                    <NavLink class="btn btn-block btn-dark" href="#">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-                    </NavLink>
+            <EditForm Model="registerRequestViewModel" OnValidSubmit="OnValidSubmit">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                <div class="mb-3">
+                    <InputText id="nombre" @bind-Value="registerRequestViewModel.Nombre" class="form-control" placeholder="First Name"></InputText>
+                    <ValidationMessage For="@(()=>registerRequestViewModel.Nombre)"></ValidationMessage>
                 </div>
+                <div class="mb-3">
+                    <InputText id="apellido" @bind-Value="registerRequestViewModel.Apellido" class="form-control" placeholder="Surname"></InputText>
+                    <ValidationMessage For="@(()=>registerRequestViewModel.Apellido)"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <InputText id="email" type="email" @bind-Value="registerRequestViewModel.Email" class="form-control" placeholder="Email"></InputText>
+                    <ValidationMessage For="@(()=>registerRequestViewModel.Email)"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <InputText id="password" type="password" @bind-Value="registerRequestViewModel.Password" class="form-control" placeholder="Password"></InputText>
+                    <ValidationMessage For="@(()=>registerRequestViewModel.Password)"></ValidationMessage>
+                </div>
+                <div class="input-group mb-3">
+                    <InputText id="confirmPassword" type="password" @bind-Value="registerRequestViewModel.ConfirmPassword" class="form-control" placeholder="Confirm Password"></InputText>
+                    <ValidationMessage For="@(()=>registerRequestViewModel.ConfirmPassword)"></ValidationMessage>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <InputCheckbox typeof="checkbox" id="agreeTerms" @bind-Value="ReadTerms" name="terms"></InputCheckbox>
+                            <label for="agreeTerms">
+                                I agree to the <a href="#">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-dark btn-block">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        @* <ValidationSummary></ValidationSummary> *@
+                        @if (HayErrores)
+                        {
+                            <p class="text-center text-danger">@MensajeErrores</p>
+                        }
+                    </div>
+                </div>
+            </EditForm>
 
-                <NavLink class="text-center" href="home">
-                    I already have a membership
+            <div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <NavLink class="btn btn-block btn-dark" href="#">
+                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                </NavLink>
+                <NavLink class="btn btn-block btn-dark" href="#">
+                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                 </NavLink>
             </div>
-            <!-- /.form-box -->
-        </div><!-- /.card -->
-    </div>
-    <!-- /.register-box -->
+
+            <NavLink class="text-center" href="home">
+                I already have a membership
+            </NavLink>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
 </div>
+<!-- /.register-box -->

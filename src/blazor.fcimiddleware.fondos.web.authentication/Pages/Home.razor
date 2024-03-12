@@ -2,77 +2,75 @@
 @page "/home"
 
 
-<div class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="#"><b>FCI</b> Middleware</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-
-                <EditForm Model="authRequestViewModel" OnValidSubmit="OnValidSubmit">
-                    <DataAnnotationsValidator></DataAnnotationsValidator>
-                    
-                    <div class="mb-3">
-                        <InputText id="email" type="email" @bind-Value="authRequestViewModel.Email" class="form-control" placeholder="Email"></InputText>
-                        <ValidationMessage For="@(()=>authRequestViewModel.Email)"></ValidationMessage>
-                    </div>
-                    <div class="mb-3">
-                        <InputText id="password" type="password" @bind-Value="authRequestViewModel.Password" class="form-control" placeholder="Password"></InputText>
-                        <ValidationMessage For="@(()=>authRequestViewModel.Password)"></ValidationMessage>
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <InputCheckbox typeof="checkbox" id="remember" @bind-Value="authRequestViewModel.RememberMe"></InputCheckbox>
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-dark btn-block">Sign In</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            @* <ValidationSummary></ValidationSummary> *@
-                            @if (HayErrores)
-                            {
-                                <p class="text-center text-danger">@MensajeErrores</p>
-                            }
-                        </div>
-                    </div>                    
-                </EditForm>
-
-                <div class="social-auth-links text-center mb-3">
-                    <p>- OR -</p>
-                    <NavLink class="btn btn-block btn-dark" href="#">
-                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                    </NavLink>
-                    <NavLink class="btn btn-block btn-dark" href="#">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-                    </NavLink>
-                </div>
-                <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <NavLink class="text-center" href="forgot-password">
-                        I forgot my password
-                    </NavLink>
-                </p>
-                <p class="mb-0">
-                    <NavLink class="text-center" href="register">
-                        Register a new membership
-                    </NavLink>                    
-                </p>
-            </div>
-            <!-- /.login-card-body -->
-        </div>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>FCI</b> Middleware</a>
     </div>
-    <!-- /.login-box -->
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <EditForm Model="authRequestViewModel" OnValidSubmit="OnValidSubmit">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                    
+                <div class="mb-3">
+                    <InputText id="email" type="email" @bind-Value="authRequestViewModel.Email" class="form-control" placeholder="Email"></InputText>
+                    <ValidationMessage For="@(()=>authRequestViewModel.Email)"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <InputText id="password" type="password" @bind-Value="authRequestViewModel.Password" class="form-control" placeholder="Password"></InputText>
+                    <ValidationMessage For="@(()=>authRequestViewModel.Password)"></ValidationMessage>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <InputCheckbox typeof="checkbox" id="remember" @bind-Value="authRequestViewModel.RememberMe"></InputCheckbox>
+                            <label for="remember">
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-dark btn-block">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        @* <ValidationSummary></ValidationSummary> *@
+                        @if (HayErrores)
+                        {
+                            <p class="text-center text-danger">@MensajeErrores</p>
+                        }
+                    </div>
+                </div>                    
+            </EditForm>
+
+            <div class="social-auth-links text-center mb-3">
+                <p>- OR -</p>
+                <NavLink class="btn btn-block btn-dark" href="#">
+                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                </NavLink>
+                <NavLink class="btn btn-block btn-dark" href="#">
+                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                </NavLink>
+            </div>
+            <!-- /.social-auth-links -->
+
+            <p class="mb-1">
+                <NavLink class="text-center" href="forgot-password">
+                    I forgot my password
+                </NavLink>
+            </p>
+            <p class="mb-0">
+                <NavLink class="text-center" href="register">
+                    Register a new membership
+                </NavLink>                    
+            </p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
 </div>
+<!-- /.login-box -->
